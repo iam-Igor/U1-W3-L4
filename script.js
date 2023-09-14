@@ -31,12 +31,3 @@ const getNumber = function () {
 
 const btn = document.getElementById("get-number");
 btn.addEventListener("click", getNumber);
-
-const addNumbers = function () {
-  const h3s = document.getElementById("extract");
-  const numbers = document.createElement("h3");
-
-  numbers.innerText = getNumber;
-
-  h3s.appendChild(numbers);
-};
