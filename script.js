@@ -22,15 +22,21 @@ for (let y = 0; y < cells / 9; y++) {
 const getNumber = function () {
   const randomNumber = Math.floor(Math.random() * 76) + 1;
 
-  const selectedNumber = document.querySelector(
-    `#table td:nth-child(${randomNumber})`
-  );
+  const selectedNumber =
+    document.querySelectorAll("#table td")[randomNumber - 1];
   if (selectedNumber) {
     selectedNumber.classList.add("number-color");
   }
-
-  console.log(selectedNumber);
 };
 
 const btn = document.getElementById("get-number");
 btn.addEventListener("click", getNumber);
+
+const addNumbers = function () {
+  const h3s = document.getElementById("extract");
+  const numbers = document.createElement("h3");
+
+  numbers.innerText = getNumber;
+
+  h3s.appendChild(numbers);
+};
